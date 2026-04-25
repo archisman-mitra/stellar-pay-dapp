@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 🌌 StellarPay — Web3 Payment Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern Web3 payment dashboard built on the Stellar Testnet.  
+Connect your wallet, view your XLM balance, and send payments seamlessly with a clean and intuitive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 🔐 Connect Wallet (Freighter)
+- 💰 View XLM Balance
+- 💸 Send XLM Payments
+- 📜 Transaction History
+- 🔗 View transactions on Stellar Explorer
+- ⚡ Real-time feedback (success / failure)
+- 🎨 Modern UI built with Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 How It Works
 
-### `npm test`
+This app uses the Stellar Testnet to simulate real blockchain transactions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Wallet connection via Freighter
+- Transactions signed securely by the wallet
+- Balance & transaction data fetched from Stellar network
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📸 Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> 📁 Add your screenshots inside `/screenshots` folder and update paths below
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 🔐 Wallet Connected
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Wallet Connected](./screenshots/Screenshot 2026-04-25 220805.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 💰 Balance Displayed
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Balance](./screenshots/Screenshot 2026-04-25 220922.jpg)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 💸 Sending Transaction
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Send Payment](./screenshots/Screenshot 2026-04-25 221229.jpg)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### ✅ Successful Transaction
 
-### Analyzing the Bundle Size
+![Success](./screenshots/Screenshot 2026-04-25 221511.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 🔗 Transaction on Blockchain (Proof)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Explorer](./screenshots/Screenshot 2026-04-25 221628.jpg)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🛠️ Tech Stack
 
-### Deployment
+- ⚛️ React
+- 🎨 Tailwind CSS
+- 🌐 Stellar SDK
+- 🔑 Freighter Wallet
+- 🚀 Stellar Testnet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## ⚙️ Setup & Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+```
+
+2. Install dependencies
+   npm install
+3. Start the app
+   npm start
+4. Open in browser
+   http://localhost:3000
+   🧪 How to Test Transactions
+   Install Freighter wallet
+   Switch to Testnet
+   Fund your account using:
+   👉 https://friendbot.stellar.org/
+   Connect wallet in app
+   Send XLM to another test address
+   🎯 Project Requirements Covered
+   ✅ Wallet Setup (Freighter + Testnet)
+   ✅ Wallet Connect / Disconnect
+   ✅ Fetch & Display Balance
+   ✅ Send XLM Transaction
+   ✅ Transaction Feedback (Success / Failure)
+   ✅ Transaction Hash + Explorer Link
+   📌 Notes
+   This project runs on Stellar Testnet
+   No real funds are used
+   Transactions are verifiable on:
+   👉 https://stellar.expert/explorer/testnet
+   🚀 Future Improvements
+   📊 Balance chart
+   📱 Better mobile responsiveness
+   🔍 Transaction search
+   🌙 Dark/Light mode toggle
+   👨‍💻 Author
+
+Archisman Mitra
+
+⭐ If you like this project
+
+Give it a ⭐ on GitHub!
