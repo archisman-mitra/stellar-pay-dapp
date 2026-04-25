@@ -36,8 +36,8 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 
 ## 📸 Screenshots
 
-| Wallet Connected | Balance | Send Payment | Success |
-|---|---|---|---|
+| Wallet Connected                                              | Balance                                                        | Send Payment                                                | Success                                                        |
+| ------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------- |
 | ![Wallet](./screenshots/Screenshot%202026-04-25%20220805.jpg) | ![Balance](./screenshots/Screenshot%202026-04-25%20220922.jpg) | ![Send](./screenshots/Screenshot%202026-04-25%20221229.jpg) | ![Success](./screenshots/Screenshot%202026-04-25%20221511.jpg) |
 
 > **Transaction on Stellar Explorer (proof of deployment)**  
@@ -57,12 +57,12 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React + Tailwind CSS |
-| Blockchain | Stellar SDK (Testnet) |
-| Wallet | Freighter Browser Extension |
-| Explorer | [stellar.expert/testnet](https://stellar.expert/explorer/testnet) |
+| Layer      | Technology                                                        |
+| ---------- | ----------------------------------------------------------------- |
+| Frontend   | React + Tailwind CSS                                              |
+| Blockchain | Stellar SDK (Testnet)                                             |
+| Wallet     | Freighter Browser Extension                                       |
+| Explorer   | [stellar.expert/testnet](https://stellar.expert/explorer/testnet) |
 
 ---
 
