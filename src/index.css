@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-[#0b1220] text-slate-300 antialiased selection:bg-indigo-500/30;
+    font-family: var(--font-sans);
+  }
+
+  /* Ensure the background color is consistently applied */
+  html, body, #root {
+    @apply bg-[#0b1220] min-h-screen;
+  }
+
+  /* Fix for browser autofill background/text color */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1e293b inset !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0b1220];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full border-2 border-[#0b1220] hover:bg-indigo-500/50 transition-colors;
 }
