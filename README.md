@@ -21,7 +21,7 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 <div align="center">
   <img src="./screenshots/Home1.jpg" alt="Home Page" width="48%" />
   &nbsp;
-  <img src="./screenshots/Home2.jpg" alt="Home Page Alt" width="48%" />
+  <img src="./screenshots/home2.jpg" alt="Home Page Alt" width="48%" />
 </div>
 
 ---
