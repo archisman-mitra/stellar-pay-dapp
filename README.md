@@ -14,6 +14,26 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 
 ---
 
+## 🖼️ UI Overview
+
+### 🏠 Home Page
+
+<div align="center">
+  <img src="./screenshots/Home1.jpg" alt="Home Page" width="48%" />
+  &nbsp;
+  <img src="./screenshots/Home2.jpg" alt="Home Page Alt" width="48%" />
+</div>
+
+---
+
+### 📊 Dashboard
+
+<div align="center">
+  <img src="./screenshots/Dashboard.jpg" alt="Dashboard" width="90%" />
+</div>
+
+---
+
 ## 📸 Screenshots
 
 | Wallet Connected | Balance | Send Payment | Success |
