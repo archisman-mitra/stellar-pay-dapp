@@ -30,6 +30,9 @@ This app uses the Stellar Testnet to simulate real blockchain transactions.
 ## 📸 Screenshots
 
 > 📁 Add your screenshots inside `/screenshots` folder and update paths below
+> ![Home](./screenshots/home1.jpg)
+> ![Home2](./screenshots/home2.jpg)
+> ![Dashboard](./screenshots/dashboard.jpg)
 
 ---
 
