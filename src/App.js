@@ -17,6 +17,7 @@ function App() {
   const [balance, setBalance] = useState("10,000.00");
   const [txRefreshKey, setTxRefreshKey] = useState(0);
   const [walletModalOpen, setWalletModalOpen] = useState(false);
+  const [connectedWallet, setConnectedWallet] = useState(null);
 
   const handleOpenWalletModal = () => {
     setWalletModalOpen(true);
@@ -29,11 +30,13 @@ function App() {
   const handleSelectWallet = async (walletName) => {
     setWalletModalOpen(false);
     try {
-      // Currently only Freighter is implemented, but the modal shows all options
-      const addr = await connectWallet();
-      setAddress(addr);
-      const bal = await getBalance(addr);
-      setBalance(bal);
+      const addr = await connectWallet(walletName);
+      if (addr) {
+        setAddress(addr);
+        setConnectedWallet(walletName);
+        const bal = await getBalance(addr);
+        setBalance(bal);
+      }
     } catch (err) {
       console.error("Connection failed:", err);
     }
@@ -42,6 +45,7 @@ function App() {
   const handleDisconnect = () => {
     setAddress("");
     setBalance("");
+    setConnectedWallet(null);
   };
 
   const handleRefreshBalance = async () => {
@@ -55,7 +59,7 @@ function App() {
   };
 
   const handleSend = async (recipient, amount) => {
-    const result = await sendXLM(address, recipient, amount);
+    const result = await sendXLM(address, recipient, amount, connectedWallet);
 
     // Refresh balance after successful send
     const bal = await getBalance(address);

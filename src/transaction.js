@@ -6,7 +6,9 @@ import {
   rpc,
 } from "@stellar/stellar-sdk";
 
-import { signTransaction } from "@stellar/freighter-api";
+import { signTransaction as freighterSign } from "@stellar/freighter-api";
+import albedo from "@albedo-link/intent";
+import { xBullWalletConnect } from "@creit.tech/xbull-wallet-connect";
 
 // ✅ Use RPC server
 const server = new rpc.Server("https://soroban-testnet.stellar.org");
@@ -28,7 +30,7 @@ const waitForConfirmation = async (hash, maxAttempts = 15) => {
   throw new Error("Transaction confirmation timed out");
 };
 
-export const sendXLM = async (source, destination, amount) => {
+export const sendXLM = async (source, destination, amount, walletName) => {
   const account = await server.getAccount(source);
 
   const fee = "100";
@@ -47,15 +49,37 @@ export const sendXLM = async (source, destination, amount) => {
     .setTimeout(30)
     .build();
 
-  // 🔐 Sign with Freighter
-  // v6+ returns { signedTxXdr, signerAddress } instead of a raw string
-  const signResult = await signTransaction(transaction.toXDR(), {
-    networkPassphrase: Networks.TESTNET,
-  });
+  const xdr = transaction.toXDR();
+  let signedXDR;
 
-  // ✅ Extract the signed XDR string (handle both v5 and v6 formats)
-  const signedXDR =
-    typeof signResult === "string" ? signResult : signResult.signedTxXdr;
+  if (walletName === "Freighter") {
+    // 🔐 Sign with Freighter
+    // v6+ returns { signedTxXdr, signerAddress } instead of a raw string
+    const signResult = await freighterSign(xdr, {
+      networkPassphrase: Networks.TESTNET,
+    });
+    signedXDR = typeof signResult === "string" ? signResult : signResult.signedTxXdr;
+  } 
+  else if (walletName === "Albedo") {
+    const signResult = await albedo.tx({
+      xdr: xdr,
+      network: "testnet"
+    });
+    signedXDR = signResult.signed_envelope_xdr;
+  }
+  else if (walletName === "xBull") {
+    const bridge = new xBullWalletConnect({
+        preferredTarget: 'extension'
+    });
+    signedXDR = await bridge.sign({
+      xdr: xdr,
+      network: Networks.TESTNET
+    });
+    bridge.closeConnections();
+  }
+  else {
+    throw new Error(`Unsupported wallet for signing: ${walletName}`);
+  }
 
   // ✅ Rebuild and submit
   const tx = TransactionBuilder.fromXDR(signedXDR, Networks.TESTNET);
